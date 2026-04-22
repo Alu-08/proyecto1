@@ -1,9 +1,126 @@
-#nav1{
-    display: flex;
+/* navbar.component.css - VERSIÓN MOVIDA A LA DERECHA */
+/* ================================================= */
+
+/* CONTENEDOR PRINCIPAL DEL NAVBAR */
+.navbar {
+  /* LISTA DE NAVEGACIÓN - Aquí van todos los items */
+  .navbar-nav {
+    position: relative;        /* Permite posicionar elementos absolutos dentro */
+    width: 100%;              /* Toma TODO el ancho disponible */
+    justify-content: space-between;  /* REPARTE: nav1 a la izquierda, nav2 a la derecha */
+  }
+  
+  /* ========================================= */
+  /* NAV1 - IZQUIERDA: Productos, Ofertas, Contacto */
+  /* ========================================= */
+  #nav1 {
+    display: flex;            /* Pone los 3 items en FILA horizontal */
+  }
+  
+  /* ESPACIADO entre items de nav1 */
+  #nav1 .nav-item:not(:last-child) {
+    margin-right: 1rem;       /* 1rem = 16px de espacio entre Productos/Ofertas/Contacto */
+  }
+  
+  /* ESTILO BASE de los links de nav1 */
+  #nav1 .nav-link {
+    color: #495057;           /* Color gris oscuro por defecto */
+    font-weight: 500;         /* Texto semi-negrita (más prominente) */
+    padding: 0.75rem 1rem;    /* Espaciado interno (arriba/abajo 12px, lados 16px) */
+    border-radius: 0.375rem;  /* Bordes redondeados suaves */
+    transition: all 0.3s ease; /* ANIMACIÓN SUAVE en todos los cambios (0.3 segundos) */
+  }
+  
+  /* HOVER de nav1 (cuando pasas el mouse) */
+  #nav1 .nav-link:hover {
+    color: #0d6efd;                 /* Cambia a AZUL */
+    background-color: rgba(13, 110, 253, 0.1); /* Fondo azul transparente */
+  }
+  
+  /* LINK ACTIVO de nav1 (página actual) */
+  #nav1 .nav-link.active {
+    color: #0d6efd;                 /* AZUL permanente */
+    background-color: rgba(13, 110, 253, 0.1); /* Fondo azul permanente */
+    font-weight: 600;               /* Más negrita para resaltar */
+  }
+  
+  /* ========================================= */
+  /* NAV2 - DERECHA: Favoritos, Carrito, Registro */
+  /* ========================================= */
+  #nav2 {
+    display: flex;                /* Items en fila horizontal */
+    margin-left: auto;            /* 🔑 MAGIA: ocupa TODO el espacio libre → DERECHA */
+    margin-right: 0;              /* Pega al BORDE derecho (0 margen) */
+  }
+  
+  /* ESPACIADO entre items de nav2 */
+  #nav2 .nav-item:not(:last-child) {
+    margin-right: 1rem;           /* Espacio entre Favoritos/Carrito/Registro */
+  }
+  
+  /* ESTILO BASE de links nav2 (distinto a nav1) */
+  #nav2 .nav-link {
+    color: #6c757d;               /* Gris MÁS CLARO (menos prominente que nav1) */
+    font-weight: 400;             /* Texto normal (no negrita) */
+    padding: 0.75rem 1rem;        /* Mismo padding que nav1 */
+    border-radius: 0.375rem;      /* Bordes redondeados */
+    transition: all 0.3s ease;    /* Animación suave */
+  }
+  
+  /* 🛒 ICONO AUTOMÁTICO para Carrito */
+  #nav2 .nav-link[href*="Carrito"]::before {
+    content: '🛒';                /* AÑADE icono carrito ANTES del texto */
+    margin-right: 0.5rem;         /* Espacio entre icono y texto */
+    font-size: 1.1em;             /* Icono un poco más grande */
+  }
+  
+  /* ❤️ ICONO AUTOMÁTICO para Favoritos */
+  #nav2 .nav-link[href*="Favoritos"]::before {
+    content: '❤️';                /* AÑADE icono corazón ANTES del texto */
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+  }
+  
+  /* 🔐 BOTÓN ESPECIAL para Registro */
+  #nav2 .nav-link[href*="Registro"] {
+    border: 2px solid #0d6efd;    /* BORDE AZUL grueso (2px) */
+    color: #0d6efd;               /* Texto azul */
+  }
+  
+  /* HOVER del botón Registro */
+  #nav2 .nav-link[href*="Registro"]:hover {
+    background-color: #0d6efd;    /* Fondo AZUL SÓLIDO */
+    color: white;                 /* Texto blanco */
+    transform: translateY(-1px);  /* SUBE 1px al hacer hover */
+  }
+  
+  /* HOVER GENERAL de nav2 (excepto Registro) */
+  #nav2 .nav-link:hover {
+    color: #0d6efd;               /* Azul */
+    background-color: rgba(13, 110, 253, 0.08); /* Fondo azul muy claro */
+    transform: translateY(-1px);  /* Sube ligeramente */
+  }
 }
-#nav2{
-    display: flex;
+
+/* ========================================= */
+/* 📱 RESPONSIVE - PANTALLAS MÓVILES (<992px) */
+/* ========================================= */
+@media (max-width: 991.98px) {
+  /* APILA VERTICAL todos los items */
+  .navbar-nav {
+    flex-direction: column;       /* CAMBIA de horizontal → VERTICAL */
+    align-items: flex-start !important; /* Alinea a la izquierda */
+  }
+  
+  /* nav2 en móvil: vuelve al inicio (no derecha) */
+  .navbar-nav #nav2 {
+    margin-left: 0;               /* Elimina el "auto" → vuelve izquierda */
+    margin-top: 0.5rem;           /* Pequeño espacio arriba */
+    width: 100%;                  /* Toma todo el ancho */
+  }
 }
-#navbarNav{
-    display: flex;
+
+#logoInicio{
+    height: 150px;
+    width: 150px;
 }

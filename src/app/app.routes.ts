@@ -10,14 +10,14 @@ import { Registro } from './aut/registro/registro';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'Inicio', pathMatch: 'full'},
-    {path: 'inicio', component: Inicio},
-    {path: 'inicio', component: Productos},
-    {path: 'inicio', component: Ofertas},
-    {path: 'inicio', component: Contacto},
-    {path: 'inicio', component: Carrito},
-    {path: 'inicio', component: Favoritos},
-    {path: 'inicio', component: InicioSecion},
-    {path: 'inicio', component: Registro},
+    {path: 'Inicio', component: Inicio},
+    {path: 'Productos', component: Productos},
+    {path: 'Ofertas', component: Ofertas},
+    {path: 'Contacto', component: Contacto},
+    {path: 'Carrito', component: Carrito},
+    {path: 'Favoritos', component: Favoritos},
+    {path: 'InicioSecion', component: InicioSecion},
+    {path: 'Registro', component: Registro},
     {path: '***', redirectTo: 'inicio'}
 
 ];
