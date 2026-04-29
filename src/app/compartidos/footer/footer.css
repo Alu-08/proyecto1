@@ -1,0 +1,44 @@
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 240px;
+}
+
+#div1{
+    width: 256px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#derechos{
+    font-size: 10px;
+    text-align: center;
+}
+#texto{
+    width: 256px;
+}
+#imagenfoot{
+    width: 256px;
+}
+#div2{
+    width: 250px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+#redes{
+    display: flex;
+    gap: 10px;
+}
+#div3{
+    width: 250px;
+    height: 100%;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+}

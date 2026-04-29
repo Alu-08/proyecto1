@@ -29,19 +29,22 @@
     padding: 0.75rem 1rem;    /* Espaciado interno (arriba/abajo 12px, lados 16px) */
     border-radius: 0.375rem;  /* Bordes redondeados suaves */
     transition: all 0.3s ease; /* ANIMACIÓN SUAVE en todos los cambios (0.3 segundos) */
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* HOVER de nav1 (cuando pasas el mouse) */
   #nav1 .nav-link:hover {
-    color: #0d6efd;                 /* Cambia a AZUL */
+    color: #bb8d49;                 /* Cambia a AZUL */
     background-color: rgba(13, 110, 253, 0.1); /* Fondo azul transparente */
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* LINK ACTIVO de nav1 (página actual) */
   #nav1 .nav-link.active {
-    color: #0d6efd;                 /* AZUL permanente */
-    background-color: rgba(13, 110, 253, 0.1); /* Fondo azul permanente */
+    color: #000000;                 /* AZUL permanente */
+    background-color: #c9a36a; /* Fondo azul permanente */
     font-weight: 600;               /* Más negrita para resaltar */
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* ========================================= */
@@ -60,12 +63,13 @@
   
   /* ESTILO BASE de links nav2 (distinto a nav1) */
   #nav2 .nav-link {
-    color: #6c757d;               /* Gris MÁS CLARO (menos prominente que nav1) */
+    color: #bb8d49;               /* Gris MÁS CLARO (menos prominente que nav1) */
     font-weight: 400;             /* Texto normal (no negrita) */
     padding: 0.75rem 1rem;        /* Mismo padding que nav1 */
     border-radius: 0.375rem;      /* Bordes redondeados */
     transition: all 0.3s ease;    /* Animación suave */
-  }
+    font-family: 'Times New Roman', Times, serif;
+    }
   
   /* 🛒 ICONO AUTOMÁTICO para Carrito */
   #nav2 .nav-link[href*="Carrito"]::before {
@@ -83,20 +87,21 @@
   
   /* 🔐 BOTÓN ESPECIAL para Registro */
   #nav2 .nav-link[href*="Registro"] {
-    border: 2px solid #0d6efd;    /* BORDE AZUL grueso (2px) */
-    color: #0d6efd;               /* Texto azul */
+    border: 2px solid #bb8d49;    /* BORDE AZUL grueso (2px) */
+    color:#bb8d49;               /* Texto azul */
   }
   
   /* HOVER del botón Registro */
   #nav2 .nav-link[href*="Registro"]:hover {
-    background-color: #0d6efd;    /* Fondo AZUL SÓLIDO */
+    background-color:#bb8d49;    /* Fondo AZUL SÓLIDO */
     color: white;                 /* Texto blanco */
     transform: translateY(-1px);  /* SUBE 1px al hacer hover */
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* HOVER GENERAL de nav2 (excepto Registro) */
   #nav2 .nav-link:hover {
-    color: #0d6efd;               /* Azul */
+    color: #bb8d49;               /* Azul */
     background-color: rgba(13, 110, 253, 0.08); /* Fondo azul muy claro */
     transform: translateY(-1px);  /* Sube ligeramente */
   }

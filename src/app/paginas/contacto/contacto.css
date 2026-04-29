@@ -1,0 +1,21 @@
+#contacto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+}
+#formulario{
+    padding: 20px;
+    margin: 50px;
+}
+span{
+    background-color: darkolivegreen;
+    color: white;
+}
+button{
+    border-radius: 3px;
+    background-color: darkolivegreen;
+    border: solid;
+    border-color: darkolivegreen;
+    color: white;
+}
