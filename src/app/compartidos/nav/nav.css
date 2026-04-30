@@ -42,7 +42,7 @@
   /* LINK ACTIVO de nav1 (página actual) */
   #nav1 .nav-link.active {
     color: #000000;                 /* AZUL permanente */
-    background-color: #c9a36a; /* Fondo azul permanente */
+    background-color: transparent; /* Fondo azul permanente */
     font-weight: 600;               /* Más negrita para resaltar */
     font-family: 'Times New Roman', Times, serif;
   }
@@ -93,7 +93,7 @@
   
   /* HOVER del botón Registro */
   #nav2 .nav-link[href*="Registro"]:hover {
-    background-color:#bb8d49;    /* Fondo AZUL SÓLIDO */
+      /* Fondo AZUL SÓLIDO */
     color: white;                 /* Texto blanco */
     transform: translateY(-1px);  /* SUBE 1px al hacer hover */
     font-family: 'Times New Roman', Times, serif;
