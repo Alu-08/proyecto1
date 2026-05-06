@@ -1,0 +1,19 @@
+<div class="cartasProd">
+    @for(p of Productos; track p.id){
+    @if(p.disponible){
+        <div class="card mb-3" style="max-width: 540px;" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="assets/{{p.imagen}}" class="img-fluid rounded-start" alt="{{p.nombre}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{p.nombre}}</h5>
+        <p class="card-text">{{p.descripcion}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+    }
+}
+</div>
