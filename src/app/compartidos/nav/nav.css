@@ -41,9 +41,7 @@
   
   /* LINK ACTIVO de nav1 (página actual) */
   #nav1 .nav-link.active {
-    color: #000000;                 /* AZUL permanente */
-    background-color: transparent; /* Fondo azul permanente */
-    font-weight: 600;               /* Más negrita para resaltar */
+    color: #bb8d49;                 
     font-family: 'Times New Roman', Times, serif;
   }
   

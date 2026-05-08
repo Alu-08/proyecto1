@@ -1,194 +1,138 @@
 /* ========================================
-   RESET Y ESTILOS BASE
+   CUERPO (BODY) - Fondo neutro y limpio
 ========================================= */
-* {
+.body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* ✅ CAMBIADO: Nuevo gradiente con tus colores */
-  background: linear-gradient(135deg, #556b2f 0%, #bb8d49 100%);
+  background-color: #fcfaf7; /* Blanco roto orgánico */
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 20px;
 }
 
 /* ========================================
-   CONTENEDOR PRINCIPAL DEL FORMULARIO
+   CONTENEDOR DEL FORMULARIO (#formulario)
 ========================================= */
-form {
-  /* ✅ CAMBIADO: Sombra con nuevo color */
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(85, 107, 47, 0.2); /* #556b2f con 20% opacidad */
+#formulario {
   width: 100%;
-  max-width: 400px;
-  animation: slideIn 0.5s ease-out;
+  max-width: 450px;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(107, 125, 100, 0.1);
+  border: 1px solid rgba(230, 189, 124, 0.3); /* Color Arena suave */
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Título igual al de Contacto */
+#formulario h1 {
+  font-family: 'Playfair Display', serif;
+  color: #3e4a39; /* Verde oscuro */
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
+/* Estructura de los bloques de entrada */
 form > div {
-  margin-bottom: 25px;
-  position: relative;
+  margin-bottom: 1.5rem;
 }
 
+/* Etiquetas (Labels) */
 label {
   display: block;
   margin-bottom: 8px;
-  color: #333;
+  color: #6b7d64; /* Verde oliva */
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
+/* ========================================
+   INPUTS (Match con .form-control)
+========================================= */
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 15px 20px;
-  border: 2px solid #e1e5e9;
-  border-radius: 12px;
-  font-size: 16px;
+  padding: 12px;
+  border: 1px solid rgba(230, 189, 124, 0.4);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
   transition: all 0.3s ease;
-  background: #f8f9fa;
 }
 
-/* ========================================
-   INPUTS FOCUS - NUEVOS COLORES
-========================================= */
-input[type="email"]:focus,
-input[type="password"]:focus {
+/* Efecto al hacer foco (Focus) */
+input:focus {
+  border-color: #6b7d64;
+  box-shadow: 0 0 0 0.25rem rgba(107, 125, 100, 0.15);
   outline: none;
-  /* ✅ CAMBIADO: Borde verde oliva */
-  border-color: #556b2f;
-  background: #fff;
-  /* ✅ CAMBIADO: Anillo con verde oliva */
-  box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.1);
-  transform: translateY(-2px);
 }
 
 input::placeholder {
-  color: #9ca3af;
-  font-weight: 400;
+  color: #adb5bd;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 /* ========================================
-   BOTÓN - NUEVOS COLORES
+   BOTÓN (Match con botón de contacto)
 ========================================= */
 button[type="submit"] {
   width: 100%;
-  padding: 16px;
-  /* ✅ CAMBIADO: Gradiente con TUS colores */
-  background: linear-gradient(135deg, #556b2f 0%, #bb8d49 100%);
+  background-color: #6b7d64; /* Verde oliva sólido */
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-top: 1rem;
 }
 
-/* ✅ BOTÓN HOVER - Sombra con nuevo color */
 button[type="submit"]:hover {
-  transform: translateY(-3px);
-  /* ✅ CAMBIADO: Sombra verde oliva */
-  box-shadow: 0 10px 25px rgba(85, 107, 47, 0.4);
+  background-color: #3e4a39; /* Verde más profundo */
+  box-shadow: 0 5px 15px rgba(62, 74, 57, 0.3);
+  transform: translateY(-2px);
 }
 
 button[type="submit"]:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
 }
 
 /* ========================================
-   SECCIÓN REGISTRO - NUEVOS COLORES
+   SECCIÓN DE REGISTRO / LINKS
 ========================================= */
 form > div:last-child {
   text-align: center;
-  margin-top: 10px;
-  padding-top: 20px;
-  border-top: 1px solid #e1e5e9;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(230, 189, 124, 0.2);
 }
 
-form > div:last-child p {
-  color: #6b7280;
-  font-size: 14px;
-  margin-bottom: 8px;
+form p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ✅ ENLACE - Nuevo color */
-form > div:last-child a {
-  /* ✅ CAMBIADO: Verde oliva */
-  color: #556b2f;
+form a {
+  color: #6b7d64;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-form > div:last-child a:hover {
-  /* ✅ CAMBIADO: Marrón dorado más oscuro */
-  color: #8b6f3a; /* Variación más oscura de #bb8d49 */
+form a:hover {
+  color: #3e4a39;
   text-decoration: underline;
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 40px 20px;
-    gap: 30px;
-  }
-  
-  form {
-    padding: 30px 25px;
-    margin: 0;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    padding: 14px 16px;
-  }
-  
-  button[type="submit"] {
-    padding: 14px;
-  }
-}
-
-/* ========================================
-   BARRA DECORATIVA - NUEVOS COLORES
-========================================= */
-form > div::before {
-  content: '';
-  position: absolute;
-  top: 35px;
-  left: 20px;
-  width: 4px;
-  height: 0;
-  /* ✅ CAMBIADO: Gradiente con TUS colores */
-  background: linear-gradient(135deg, #556b2f 0%, #bb8d49 100%);
-  transition: height 0.3s ease;
-}
-
-form > div:has(input:focus)::before {
-  height: calc(100% - 35px);
 }

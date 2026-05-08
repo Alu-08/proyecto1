@@ -5,5 +5,6 @@ export interface Producto{
     precio: number;
     stock: number;
     disponible: boolean;
-    imagen: string;
+    imagen: string,
+    favorito: boolean;
 }
