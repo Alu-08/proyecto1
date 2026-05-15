@@ -7,4 +7,5 @@ export interface Producto{
     disponible: boolean;
     imagen: string,
     favorito: boolean;
+    detalles: string;
 }

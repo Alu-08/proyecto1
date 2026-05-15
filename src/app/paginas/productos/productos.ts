@@ -17,6 +17,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paquete1kg.png',
       favorito: false,
+      detalles: 'La yerba mate sin palo común de 1kg es una opción popular entre los amantes del mate. Esta yerba se caracteriza por su sabor intenso y amargo, ideal para aquellos que prefieren un mate más fuerte. Con un precio de 12000 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes buscan disfrutar de un buen mate sin gastar demasiado. Además, su presentación en paquete de 1kg garantiza una buena cantidad de yerba para compartir con amigos y familiares.'  
     },
     {
       id: 2,
@@ -27,6 +28,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paquete500gr.png',
       favorito: false,
+      detalles: 'La yerba mate sin palo común de 500gr es una opción perfecta para quienes buscan probar esta deliciosa bebida en cantidades menores. Con un precio de 6500 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes desean disfrutar de un buen mate sin gastar demasiado. Su presentación en paquete de 500gr garantiza una buena cantidad de yerba para disfrutar solo o con amigos.'  
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paquetepalo1kg.png',
       favorito: false,
+      detalles: 'La yerba mate con palo de 1kg es una opción tradicional para los amantes del mate que prefieren un sabor más suave y menos amargo. Con un precio de 10000 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes buscan disfrutar de un buen mate sin gastar demasiado. Su presentación en paquete de 1kg garantiza una buena cantidad de yerba para compartir con amigos y familiares.'
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paquetepalo500gr.png',
       favorito: false,
+      detalles: 'La yerba mate con palo de 500gr es una opción perfecta para quienes buscan probar esta deliciosa bebida en cantidades menores. Con un precio de 5500 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes desean disfrutar de un buen mate sin gastar demasiado. Su presentación en paquete de 500gr garantiza una buena cantidad de yerba para disfrutar solo o con amigos.'
     },
     {
       id: 5,
@@ -57,6 +61,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paqueteorganica1kg.png',
       favorito: false,
+      detalles: 'La yerba mate sin palo orgánica de 1kg es una opción premium para los amantes del mate que buscan una calidad superior. Con un precio de 15000 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes desean disfrutar de un buen mate sin gastar demasiado. Su presentación en paquete de 1kg garantiza una buena cantidad de yerba para compartir con amigos y familiares.'
     },
     {
       id: 6,
@@ -67,6 +72,7 @@ export class Productos {
       disponible: true,
       imagen: 'Paqueteorganicapalo1kg.png',
       favorito: false,
+      detalles: 'La yerba mate con palo orgánica de 1kg es una opción tradicional para los amantes del mate que prefieren un sabor más suave y menos amargo. Con un precio de 14000 pesos, esta yerba ofrece una excelente relación calidad-precio para quienes buscan disfrutar de un buen mate sin gastar demasiado. Su presentación en paquete de 1kg garantiza una buena cantidad de yerba para compartir con amigos y familiares.'
     }
   ];
 }
