@@ -1,4 +1,5 @@
-<table class="table table-borderless">
+//@for(p of Productos; track p.id){
+  <table class="table table-borderless">
  <thead>
     <tr>
       <th></th>
@@ -11,7 +12,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><img src="assets/Paquete1kg.png" alt="Producto 1"></td>
+      <td><img src="{{p.imagen}}" alt="Producto 1"></td>
       <th></th>
       <td></td>
       <button>+</button>
@@ -30,3 +31,4 @@
   </tfoot>
 </table>
 <button>Finalizar Compra</button>
+//}
