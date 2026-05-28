@@ -8,4 +8,5 @@ export interface Producto{
     imagen: string,
     favorito: boolean;
     detalles: string;
+    cantidad: number;
 }
