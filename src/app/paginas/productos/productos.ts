@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
-import { Carrito } from '../../servicios/carrito';
+import { CarritoService} from '../../servicios/carritoService'
 @Component({
   selector: 'app-productos',
   imports: [],
@@ -8,7 +8,7 @@ import { Carrito } from '../../servicios/carrito';
   styleUrl: './productos.css',
 })
 export class Productos {
-  constructor(private carrito: Carrito) {}
+  constructor(private carritoS: CarritoService) {}
   Productos: Producto[] = [
     {
       id: 1,
@@ -84,6 +84,7 @@ export class Productos {
     },
   ];
   agregarAlCarrito(p: Producto): void {
-    this.carrito.añadirProducto(p);
+    alert(`Producto ${p.nombre} agregado al carrito`);
+    this.carritoS.añadirProducto(p);
   }
 }

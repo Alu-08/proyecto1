@@ -1,34 +1,44 @@
-//@for(p of Productos; track p.id){
+@if(productosCarrito.length === 0){
+  <p>El carrito está vacío.</p>
+} @else {
   <table class="table table-borderless">
- <thead>
-    <tr>
-      <th></th>
-      <th scope="col">Producto</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Cantidad</th>
-      <th></th>
-      <th><button>Vaciar Carrito</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="{{p.imagen}}" alt="Producto 1"></td>
-      <th></th>
-      <td></td>
-      <button>+</button>
-      <td></td>
-      <button>-</button>
-      <td><button>🗑️</button></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Total: $</td>
-    </tr>
-  </tfoot>
-</table>
-<button>Finalizar Compra</button>
-//}
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th style="text-align: center;">Cantidad</th>
+        <th>Eliminar</th>
+        <th><button (click)="vaciarCarrito()">Vaciar Carrito</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(p of productosCarrito; track p.id){
+        <tr>
+          <td><img src="assets/{{p.imagen}}" [alt]="p.nombre"></td>
+          <td><strong>{{p.nombre}}</strong></td>
+          <td>${{p.precio}}</td>
+          <td style="text-align: center;">
+            <button (click)="disminuirCantidad(p.id)">-</button>
+            <span style="margin: 0 10px; font-weight: bold;">{{p.cantidad}}</span>
+            <button (click)="aumentarCantidad(p.id)">+</button>
+          </td>
+          <td>
+            <button (click)="eliminarProducto(p.id)">🗑️</button>
+          </td>
+          <td></td>
+        </tr>
+      }
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total: ${{obtenerTotal()}}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <button (click)="finalizarCompra()">Finalizar Compra</button> 
+}

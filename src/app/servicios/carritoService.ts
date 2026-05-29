@@ -4,11 +4,17 @@ import { Producto } from '../models/producto';
 @Injectable({
   providedIn: 'root',
 })
-export class Carrito {
+export class CarritoService {
 Carrito: Producto[] = [];
 
-añadirProducto(p: Producto): void {
-this.Carrito.push(p);
+añadirProducto(p: Producto) {
+const producto = this.Carrito.find(prod => prod.id === p.id);
+if (producto) {
+producto.cantidad++;
+}else{
+
+  this.Carrito.push(p);
+}
 }
 
 obtenerProducto(): Producto[] {
@@ -31,7 +37,7 @@ producto.cantidad--;
 }
 
 }
-eliminarProducto(): void {
-this.Carrito = this.Carrito.filter(p => p.id !== p.id)
+eliminarProducto(id: number): void {
+this.Carrito = this.Carrito.filter(p => p.id !== id)
 }
 }

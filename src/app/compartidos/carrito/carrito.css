@@ -1,4 +1,173 @@
-img{
-    width: 200px;
-    height: 200px;
+/* ==========================================
+   Contenedor Principal y Mensajes
+   ========================================== */
+p {
+  font-size: 1.2rem;
+  color: #556b2f; /* Verde oliva oscuro */
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f6f0; /* Fondo crema suave */
+  border-radius: 8px;
+  border: 1px dashed #a3b899;
+}
+
+/* ==========================================
+   Estilos de la Tabla del Carrito
+   ========================================== */
+.table {
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #2c3e24; /* Verde bosque casi negro */
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Separación sutil entre filas */
+}
+
+/* Encabezados */
+th {
+  background-color: #3b5323; /* Verde mate profundo */
+  color: #ffffff;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+th:first-child {
+  border-top-left-radius: 8px;
+}
+
+th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Celdas del cuerpo */
+td {
+  padding: 16px;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover td {
+  background-color: #f9fbf7; /* Efecto hover sutil y natural */
+}
+
+/* Imagen del Producto */
+td img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #d0dbcd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Nombre del producto */
+td strong {
+  color: #3b5323;
+  font-size: 1.1rem;
+}
+
+/* Pie de tabla (Total) */
+tfoot td {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e24;
+  background-color: #f4f6f0;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: right;
+}
+
+/* ==========================================
+   Botones (Estilo Matero Tradicional)
+   ========================================== */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+/* Botón Vaciar Carrito (En el TH) */
+th button {
+  background-color: #a94442; /* Rojo apagado/ladrillo para advertencia */
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+}
+
+th button:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
+/* Botones de Cantidad (+ y -) */
+td button {
+  background-color: #e2ebd5;
+  color: #3b5323;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td button:hover {
+  background-color: #3b5323;
+  color: white;
+}
+
+/* Botón Eliminar (Tacho de basura) */
+td button:has(text-match("🗑️")), 
+td button {
+  /* Si el tacho es un emoji, le damos un fondo transparente o sutil */
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+td button:hover {
+  transform: scale(1.2);
+  background: transparent;
+}
+
+/* Botón Finalizar Compra (Principal) */
+/* ==========================================
+   Botón Finalizar Compra (Clase Corregida)
+   ========================================== */
+.btn-finalizar { 
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0 auto;
+  background-color: #8b5a2b; /* Color Marrón Madera / Cuero */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-finalizar:hover {
+  background-color: #3b5323; /* Cambia a verde mate al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.table ~ button:hover {
+  background-color: #3b5323; /* Cambia a verde mate al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
