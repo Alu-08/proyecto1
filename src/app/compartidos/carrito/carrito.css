@@ -158,15 +158,11 @@ td button:hover {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
 }
 
 .btn-finalizar:hover {
-  background-color: #3b5323; /* Cambia a verde mate al pasar el mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-}
-
-.table ~ button:hover {
   background-color: #3b5323; /* Cambia a verde mate al pasar el mouse */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);

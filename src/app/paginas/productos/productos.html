@@ -12,6 +12,7 @@
           <p class="card-text">{{p.descripcion}}</p>
           <p>Precio: ${{p.precio}}</p>
           <button class="btn btn-primary" (click)="agregarAlCarrito(p)" >Agregar al Carrito</button>
+          <button class="btn btn-warning" (click)="agregarAFavoritos(p)">Agregar a Favoritos</button>
           <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Detalles</button>
         </div>
       </div>

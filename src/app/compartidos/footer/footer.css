@@ -27,6 +27,10 @@
     margin-top: 150px;
     font-size: 15px;
 }
+iframe{
+    width: 150px;
+    height: 150px;
+}
 #redes{
     display: flex;
     gap: 10px;

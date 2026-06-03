@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { CarritoService} from '../../servicios/carritoService'
+import { FavoritosService } from '../../servicios/favoritos-service';
+
 @Component({
   selector: 'app-productos',
   imports: [],
@@ -8,7 +10,7 @@ import { CarritoService} from '../../servicios/carritoService'
   styleUrl: './productos.css',
 })
 export class Productos {
-  constructor(private carritoS: CarritoService) {}
+  constructor(private carritoS: CarritoService, private favoritosService: FavoritosService) {}
   Productos: Producto[] = [
     {
       id: 1,
@@ -86,5 +88,9 @@ export class Productos {
   agregarAlCarrito(p: Producto): void {
     alert(`Producto ${p.nombre} agregado al carrito`);
     this.carritoS.añadirProducto(p);
+  }
+  agregarAFavoritos(p: Producto): void {
+    alert(`Producto ${p.nombre} agregado a favoritos`);
+    this.favoritosService.añadirFavorito(p);
   }
 }

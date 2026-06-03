@@ -1,0 +1,128 @@
+/* ==========================================
+   TARJETA EN ANCHO COMPLETO (Estilo Franja Alpina)
+   ========================================== */
+
+.card.mb-3 {
+  width: 100% !important;
+  max-width: 100% !important; 
+  
+  background-color: #faf9f6; /* Blanco arena / hueso */
+  border: 1px solid #e0dbd1; /* Borde sutil color tierra ligera */
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 4px 20px rgba(43, 58, 44, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card.mb-3:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(43, 58, 44, 0.1);
+  border-color: #8fa88b; /* Verde musgo suave */
+}
+
+/* ==========================================
+   DISEÑO HORIZONTAL Y CONTENEDOR DE IMAGEN
+   ========================================== */
+
+#divimagen {
+  display: flex;
+  align-items: center; 
+  min-height: 180px;
+}
+
+#imagen {
+  object-fit: contain; 
+  width: 100%;
+  height: auto;
+  max-height: 250px;       
+}
+
+/* ==========================================
+   CUERPO DE TEXTOS Y TIPOGRAFÍA
+   ========================================== */
+
+.card-body {
+  padding: 2rem 2.5rem;
+  color: #2b3a2c; /* Verde pino oscuro */
+}
+
+.card-title {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #1c281d;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #556253; /* Verde grisáceo sutil */
+  line-height: 1.6;
+  max-width: 85%;
+  margin-bottom: 0.5rem; /* Margen inferior reducido para acercar el precio */
+}
+
+/* NUEVO: Formato tradicional para el precio debajo de la descripción */
+.card-body p:nth-of-type(2) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;       /* Tamaño destacado pero sutil */
+  font-weight: 700;         /* Negrita elegante */
+  color: #a67c52;           /* Tono tierra/cuero orgánico */
+  margin-top: 0px;          /* Evita exceso de separación con la descripción */
+  margin-bottom: 1.5rem;    /* Espacio antes de llegar a los botones */
+}
+
+/* ==========================================
+   NUEVOS BOTONES DE ACCIÓN (Estilo Montañoso Original)
+   ========================================== */
+
+.card-body .btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  margin-right: 0.75rem;
+}
+
+/* Botón "Agregar al Carrito" (Verde Bosque Fuerte) */
+.btn-primary {
+  background-color: #3b523e !important;
+  border-color: #3b523e !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background-color: #2b3a2c !important; /* Verde pino más oscuro al pasar el cursor */
+  border-color: #2b3a2c !important;
+}
+
+/* Botón "Eliminar de Favoritos" (Estilo silueta en color Tierra/Cuero) */
+.btn-danger {
+  background-color: transparent !important;
+  border-color: #a67c52 !important;
+  color: #a67c52 !important;
+}
+
+.btn-danger:hover {
+  background-color: #a67c52 !important; /* Se rellena con el color tierra */
+  color: #ffffff !important;           /* Texto pasa a blanco */
+}
+
+/* Mensaje si la lista está vacía */
+.favoritos-vacio {
+  font-family: 'Montserrat', sans-serif;
+  color: #556253;
+  font-style: italic;
+  padding: 3rem;
+  text-align: center;
+  background: #f4f1eb;
+  border-radius: 12px;
+  border: 2px dashed #cbd1c5;
+}

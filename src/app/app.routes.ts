@@ -7,6 +7,7 @@ import { Carrito } from './compartidos/carrito/carrito';
 import { Favoritos } from './compartidos/favoritos/favoritos';
 import { InicioSecion } from './aut/inicio-secion/inicio-secion';
 import { Registro } from './aut/registro/registro';
+import { FormularioCompra } from './paginas/formulario-compra/formulario-compra';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'Inicio', pathMatch: 'full'},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: 'Favoritos', component: Favoritos},
     {path: 'InicioSecion', component: InicioSecion},
     {path: 'Registro', component: Registro},
+    {path: 'formulario-compra', component: FormularioCompra},
     {path: '***', redirectTo: 'inicio'}
 
 ];

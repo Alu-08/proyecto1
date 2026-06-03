@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import {Producto} from '../../models/producto';
 import { OnInit } from '@angular/core';
 import { CarritoService } from '../../servicios/carritoService';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './carrito.html',
   styleUrl: './carrito.css',
 })
@@ -32,8 +33,9 @@ export class Carrito implements OnInit {
     this.productosCarrito = [];
   }
   finalizarCompra() {
-    alert('¡Compra finalizada!');
+    [RouterLink]='formulario-compra';
     this.vaciarCarrito();
+
   }
   obtenerTotal(): number {
     return this.productosCarrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);

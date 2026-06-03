@@ -1,16 +1,23 @@
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="assets/Paquete1kg.png" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Nombre del Producto</h5>
-        <p class="card-text">Descripción del producto...</p>
-        <button>Agregar al carrito</button>
-        <button>Eliminar de favoritos</button>
+@if(favoritos.length === 0){
+  <p class="favoritos-vacio">No tienes productos favoritos aún.</p>
+}@else{
+  @for(p of favoritos; track p.id){
+     <div class="card mb-3">
+    <div class="row g-0" id="divimagen">
+      <div class="col-md-4">
+        <img id="imagen" src="assets/{{p.imagen}}" class="img-fluid rounded-start" alt="{{p.nombre}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{p.nombre}}</h5>
+          <p class="card-text">{{p.descripcion}}</p>
+          <p>Precio: ${{p.precio}}</p>
+                  <button class="btn btn-primary" (click)="agregarAlCarrito(p)">Agregar al Carrito</button>
+        <button class="btn btn-danger" (click)="eliminarFavorito(p.id)">Eliminar de Favoritos</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  }
+}
 
