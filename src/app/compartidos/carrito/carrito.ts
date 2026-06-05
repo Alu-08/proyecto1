@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import {Producto} from '../../models/producto';
 import { OnInit } from '@angular/core';
 import { CarritoService } from '../../servicios/carritoService';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './carrito.html',
   styleUrl: './carrito.css',
 })
 export class Carrito implements OnInit {
 
   productosCarrito: Producto[] = [];
-  constructor(private carritoS: CarritoService) {}
+  constructor(private carritoS: CarritoService, private router: Router) {}
   ngOnInit() {
     this.productosCarrito = 
     this.carritoS.obtenerProducto();
@@ -33,7 +33,7 @@ export class Carrito implements OnInit {
     this.productosCarrito = [];
   }
   finalizarCompra() {
-    [RouterLink]='formulario-compra';
+    this.router.navigate(['/formulario-compra']);
     this.vaciarCarrito();
 
   }

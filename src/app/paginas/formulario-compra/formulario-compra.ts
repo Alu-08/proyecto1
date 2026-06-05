@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-compra',
@@ -25,7 +26,7 @@ export class FormularioCompra {
     terminos: false
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   confirmarCompra() {
     if (this.datosCompra.terminos) {
@@ -45,6 +46,27 @@ export class FormularioCompra {
     // Aquí se obtendría el total del carrito
     // Por ahora retorna un valor de ejemplo
     return '0.00';
+  }
+
+  enviarFormulario() {
+    const inputs = document.querySelectorAll('form-label').values;
+    if (inputs.length > 0) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "¡Compra realizada con éxito!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.router.navigate(['/']);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Completa todos los campos para finalizar la compra",
+      });
+    }
+
   }
 }
 
