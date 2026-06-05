@@ -1,260 +1,126 @@
 /* ==========================================
-   Contenedor Principal
+   ESTILO MONTAÑOSO SIMÉTRICO Y CENTRADO
    ========================================== */
-.formulario-container {
-  max-width: 700px;
+
+/* Contenedor principal del formulario */
+.row.g-3 {
+  background-color: rgba(244, 241, 234, 0.95); /* Fondo arena suave / crema alpino */
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #d4ccb6; 
+  box-shadow: 0 8px 24px rgba(44, 53, 43, 0.12);
+  max-width: 650px; /* Reducimos un poco el ancho máximo para estilizarlo */
   margin: 2rem auto;
-  padding: 2rem;
-  background-color: #faf9f6;
-  border-radius: 14px;
-  border: 1px solid #e0dbd1;
-  box-shadow: 0 4px 20px rgba(43, 58, 44, 0.08);
-}
-
-.formulario-container h1 {
-  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  color: #1c281d;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* ==========================================
-   Formulario y Fieldsets
-   ========================================== */
-.formulario-compra {
+  
+  /* Centrado de los elementos hijos */
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-
-.seccion {
-  border: 1px solid #d0dbcd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #ffffff;
-  transition: border-color 0.3s ease;
-}
-
-.seccion:hover {
-  border-color: #8fa88b;
-}
-
-.seccion legend {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #3b5323;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* ==========================================
-   Campos del Formulario
-   ========================================== */
-.form-group {
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #2b3a2c;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.form-group input,
-.form-group select {
-  padding: 0.75rem 1rem;
-  border: 1px solid #cbd1c5;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1rem;
-  color: #2b3a2c;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #3b5323;
-  box-shadow: 0 0 0 3px rgba(59, 83, 35, 0.1);
-  background-color: #fafbf9;
-}
-
-.form-group input::placeholder {
-  color: #a3b899;
-}
-
-/* ==========================================
-   Diseño de Filas (dos columnas)
-   ========================================== */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-/* ==========================================
-   Checkbox
-   ========================================== */
-.form-group.checkbox {
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.form-group.checkbox input {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  margin-top: 0.2rem;
-  cursor: pointer;
-}
-
-.form-group.checkbox label {
-  margin-bottom: 0;
-  text-transform: none;
-  letter-spacing: normal;
-  font-weight: 500;
-  font-size: 0.95rem;
-  flex: 1;
-}
-
-/* ==========================================
-   Resumen de Compra
-   ========================================== */
-.resumen-compra {
-  background: linear-gradient(135deg, #f4f6f0 0%, #ffffff 100%);
-  border: 2px solid #d0dbcd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-}
-
-.resumen-compra h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #3b5323;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.detalle-total {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 1.3rem;
-  font-weight: bold;
 }
 
-.detalle-total span:first-child {
-  color: #2b3a2c;
+/* Forzamos a que cada bloque de formulario ocupe todo el ancho disponible */
+.row.g-3 > div {
+  width: 100%; 
+  max-width: 500px; /* Controla el largo idéntico de TODOS los campos */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.detalle-total .monto {
-  color: #8b5a2b;
-  font-size: 1.5rem;
-}
-
-/* ==========================================
-   Botones de Acción
-   ========================================== */
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.btn-cancelar,
-.btn-confirmar {
-  font-family: 'Montserrat', sans-serif;
+/* Etiquetas (Labels) centradas o alineadas a la izquierda del bloque */
+.form-label {
+  color: #2c352b; /* Verde pino profundo */
   font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.85rem 2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+  display: block;
+  text-align: left; /* Queda más ordenado alineado al inicio de su propio input */
+}
+
+/* Campos de entrada con el mismo largo exacto */
+.form-control, 
+.form-select {
+  background-color: #ffffff;
+  border: 2px solid #bdc4b1; /* Tono grisáceo mineral */
+  color: #3d4a3c;
   border-radius: 6px;
-  border: none;
+  padding: 0.65rem 0.75rem;
+  width: 100%; /* Ocupa el 100% del max-width de su contenedor */
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholders */
+.form-control::placeholder {
+  color: #a39e93;
+}
+
+/* Estado de Foco */
+.form-control:focus, 
+.form-select:focus {
+  border-color: #556b2f; /* Verde oliva */
+  background-color: #ffffff;
+  color: #2c352b;
+  box-shadow: 0 0 0 0.25rem rgba(85, 107, 47, 0.25);
+  outline: 0;
+}
+
+/* Contenedor del Checkbox centrado */
+.form-check {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0; /* Reseteo de Bootstrap para alinear con el input */
+}
+
+.form-check-input {
+  background-color: #ffffff;
+  border: 2px solid #bdc4b1;
   cursor: pointer;
+  margin-top: 0; /* Alineación vertical perfecta con el texto */
+  margin-right: 0.5rem;
+}
+
+.form-check-input:checked {
+  background-color: #556b2f;
+  border-color: #556b2f;
+}
+
+.form-check-label {
+  color: #4a5548;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Contenedor del Botón para centrarlo */
+.row.g-3 > div.col-12:last-child {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Botón "Enviar" */
+.btn-primary {
+  background-color: #8b5a2b; /* Marrón corteza */
+  border-color: #8b5a2b;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 6px;
   transition: all 0.3s ease;
-  flex: 1;
-  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(139, 90, 43, 0.15);
+  display: inline-block;
+  width: auto; /* El botón mantiene su tamaño armónico y no se estira gigante */
 }
 
-/* Botón Cancelar */
-.btn-cancelar {
-  background-color: transparent;
-  border: 2px solid #a67c52;
-  color: #a67c52;
-}
-
-.btn-cancelar:hover {
-  background-color: #a67c52;
-  color: #ffffff;
+.btn-primary:hover, 
+.btn-primary:focus {
+  background-color: #6e441f;
+  border-color: #6e441f;
+  box-shadow: 0 6px 16px rgba(139, 90, 43, 0.35);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(166, 124, 82, 0.3);
 }
 
-/* Botón Confirmar */
-.btn-confirmar {
-  background-color: #3b5323;
-  color: #ffffff;
-  border: 2px solid #3b5323;
-}
-
-.btn-confirmar:hover:not(:disabled) {
-  background-color: #2b3a2c;
-  border-color: #2b3a2c;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(43, 58, 44, 0.3);
-}
-
-.btn-confirmar:disabled {
-  background-color: #cbd1c5;
-  border-color: #cbd1c5;
-  color: #a3b899;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-/* ==========================================
-   Responsive
-   ========================================== */
-@media (max-width: 768px) {
-  .formulario-container {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
-
-  .formulario-container h1 {
-    font-size: 1.5rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .form-actions {
-    flex-direction: column;
-  }
-
-  .btn-cancelar,
-  .btn-confirmar {
-    max-width: 100%;
-  }
+.btn-primary:active {
+  transform: translateY(1px);
 }

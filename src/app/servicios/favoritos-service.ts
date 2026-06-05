@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ Favoritos: Producto[] = [];
 añadirFavorito(p: Producto) {
 const producto = this.Favoritos.find(prod => prod.id === p.id);
 if (producto) {
- alert('El producto ya está en favoritos');
+ Swal.fire("El producto ya esta en favoritos!");
 }else{
  this.Favoritos.push(p);
 }
