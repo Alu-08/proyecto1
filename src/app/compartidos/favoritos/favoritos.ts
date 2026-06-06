@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { FavoritosService } from '../../servicios/favoritos-service';
 import { CarritoService } from '../../servicios/carritoService';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-favoritos',
   imports: [],
@@ -19,7 +21,13 @@ export class Favoritos {
     this.favoritos = this.favoritosService.obtenerFavoritos();
   }
   agregarAlCarrito(p: Producto) {
-    alert(`Producto ${p.nombre} agregado al carrito`);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "El producto se agregó al carrito!",
+      showConfirmButton: false,
+      timer: 1500
+    });
     this.carritoService.añadirProducto(p);
 
   }

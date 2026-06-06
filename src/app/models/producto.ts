@@ -6,7 +6,6 @@ export interface Producto{
     stock: number;
     disponible: boolean;
     imagen: string,
-    favorito: boolean;
     detalles: string;
     cantidad: number;
 }

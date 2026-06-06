@@ -1,4 +1,226 @@
-a{
+/* ==========================================================================
+   ESTILOS GENERALES Y PALETA MONTAÑOSO
+   ========================================================================== */
+   :root {
+    --verde-monte: #2c4a3e;
+    --verde-claro: #8f9e8b;
+    --tierra-suave: #f4f1ea;
+    --tierra-oscuro: #d7d0c0;
+    --texto-principal: #2b2b2b;
+    --blanco-puro: #ffffff;
+    --sombra-premium: 0 10px 30px rgba(44, 74, 62, 0.06);
+    --sombra-hover: 0 20px 40px rgba(44, 74, 62, 0.12);
+  }
+  
+  body {
+    background-color: var(--tierra-suave);
+    color: var(--texto-principal);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* ==========================================================================
+     CAROUSEL DEFINITIVO (Imágenes completas, bordes curvos y flechas verdes)
+     ========================================================================== */
+  .carousel {
+    box-shadow: var(--sombra-premium);
+    margin-bottom: 4rem;
+    background-color: var(--tierra-oscuro); 
+    border-radius: 24px; /* Bordes redondeados requeridos */
+    overflow: hidden; 
+    transition: box-shadow 0.4s ease;
+  }
+  
+  .carousel:hover {
+    box-shadow: var(--sombra-hover);
+  }
+  
+  .carousel-inner {
+    border-radius: 24px;
+  }
+  
+  .carousel-item {
+    max-height: 550px; 
+    background-color: var(--tierra-oscuro);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 550px;
+    /* Especificación clave: muestra la imagen completa sin recortar */
+    object-fit: contain; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .carousel:hover .carousel-item.active img {
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item, .carousel-item img {
+      height: 320px;
+    }
+  }
+  
+  /* Controles de las flechas (Siempre visibles sobre la imagen) */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
+    opacity: 0.9; /* Visibles por defecto sobre los costados de la foto */
+    transition: opacity 0.3s ease;
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    opacity: 1;
+  }
+  
+  /* Estilo del botón interno: Flecha Verde Montaño sobre fondo Blanco */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: var(--blanco-puro) !important; 
+    padding: 1.6rem;
+    border-radius: 50%;
+    background-size: 45%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease, filter 0.2s ease;
+  
+    /* Filtro de color para forzar el SVG de Bootstrap a tu verde (#2c4a3e) */
+    filter: invert(24%) sepia(14%) saturate(1412%) hue-rotate(111deg) brightness(95%) contrast(88%);
+  }
+  
+  /* Inversión dinámica de colores en las flechas al pasar el mouse */
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--verde-monte) !important;
+    filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(108%) contrast(107%);
+  }
+  
+  .carousel-control-prev:active .carousel-control-prev-icon,
+  .carousel-control-next:active .carousel-control-next-icon { 
+    transform: scale(0.9); 
+  }
+  
+  /* ==========================================================================
+     CARDS PREMIUM & DINÁMICAS
+     ========================================================================== */
+  .card-group {
+    gap: 2.5rem; 
+    padding: 0 1.5rem;
+  }
+  
+  .card {
+    background-color: var(--blanco-puro);
+    border: 1px solid rgba(215, 208, 192, 0.5);
+    border-radius: 16px !important; 
+    overflow: hidden;
+    box-shadow: var(--sombra-premium);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px); 
+    box-shadow: var(--sombra-hover);
+    border-color: var(--verde-claro);
+  }
+  
+  .card-img-top {
+    height: 280px;
+    object-fit: cover;
+    background-color: var(--tierra-suave);
+    border-bottom: 1px solid rgba(215, 208, 192, 0.4);
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.04);
+  }
+  
+  .card-body {
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-title {
+    color: var(--verde-monte);
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
+    transition: color 0.3s ease;
+  }
+  
+  .card:hover .card-title {
+    color: #1a3027;
+  }
+  
+  .card-text {
+    color: #5a5a5a;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  
+  .card-footer {
+    background-color: transparent; 
+    border-top: none; 
+    padding: 0 1.8rem 2rem 1.8rem;
+  }
+  
+  .card-footer a {
+    color: var(--verde-monte);
     text-decoration: none;
-    color: darkolivegreen;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .card-footer a:hover {
+    color: var(--verde-claro);
+    transform: translateX(5px); 
+  }
+  /* Contenedor principal de la oferta */
+#divofertas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f4f6f4; /* Un fondo claro sutil, podés cambiarlo por madera o bosque */
+}
+
+/* Estilos del botón/enlace animado */
+#linkofertas {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Usá la tipografía de tu web */
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2d4a22; /* El verde monte insignia de Montañoso */
+  border-radius: 4px; /* Bordes apenas redondeados para mantener lo artesanal */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* La magia del dinamismo: transiciones suaves */
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto Hover (Cuando el usuario pasa el mouse) */
+#linkofertas:hover {
+  background-color: #1e3316; /* Un verde un poco más oscuro */
+  transform: translateY(-3px); /* Se eleva sutilmente */
+  box-shadow: 0 8px 15px rgba(45, 74, 34, 0.3); /* La sombra se expande */
+}
+
+/* Efecto Active (Cuando el usuario hace clic) */
+#linkofertas:active {
+  transform: translateY(-1px); /* Baja un poquito al apretar */
+  box-shadow: 0 4px 8px rgba(45, 74, 34, 0.2);
 }
