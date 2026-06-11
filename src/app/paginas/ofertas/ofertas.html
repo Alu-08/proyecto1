@@ -1,1 +1,17 @@
-
+<div class="cartasProd">
+    @for(f of Ofertas; track f.id){
+        @if(f.disponible){
+            <div class="individual-card">
+                <div class="divimagen">
+                    <img src="assets/{{f.imagen}}" class="card-img-top" alt="Imagen de la oferta">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{f.nombre}}</h5>
+                    <p class="card-text">{{f.detalles}}</p>
+                    <button>Agregar a favoritos</button>
+                    <button>Agregar al carrito</button>
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,135 @@
+/* ==========================================
+   CONTENEDOR PRINCIPAL 
+   ========================================== */
+   .cartasProd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #fcfaf7; /* Fondo cálido montaña/arena */
+  }
+  
+  /* ==========================================
+     LA TARJETA INDIVIDUAL
+     ========================================== */
+  .individual-card {
+    border: none;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(230, 189, 124, 0.25); /* Tu color dorado/tierra E6BD7C */
+    max-width: 300px;
+    flex: 1 1 300px; /* Hace que se muestren una al lado de la otra y sean responsivas */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .individual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(107, 125, 100, 0.15); /* Sombra con un sutil tono verde oliva */
+  }
+  
+  /* Contenedor de la imagen para controlar el zoom */
+  .divimagen {
+    width: 100%;
+    height: 200px; /* Alto fijo para que todas las imágenes queden alineadas */
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Llena el espacio sin deformar la foto del paisaje */
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  /* Efecto zoom en la foto al pasar el mouse por la tarjeta */
+  .individual-card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  /* ==========================================
+     CUERPO DE LA TARJETA
+     ========================================== */
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el contenido y los botones equitativamente */
+  }
+  
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    color: #3e4a39; /* Verde pino/bosque oscuro */
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Empuja el grupo de botones hacia abajo de forma perfecta */
+  }
+  
+  /* Precios destacados (por si añades etiquetas de precio en el futuro) */
+  .card-body p.precio {
+    font-weight: 800;
+    color: #d19a5a; /* Color ocre/otoñal */
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+  
+  /* ==========================================
+     GRUPO DE BOTONES (Estilo Oliva Montañoso)
+     ========================================== */
+  button {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: block;
+  }
+  
+  button:last-of-type {
+    margin-bottom: 0; /* Quita el margen extra al último botón */
+  }
+  
+  /* Botón 1: Agregar a Favoritos (Estilo Secundario - Transparente/Oliva) */
+  button:nth-of-type(1) {
+    background-color: transparent;
+    border: 1.5px solid #6b7d64; /* Borde Verde Oliva */
+    color: #6b7d64;
+  }
+  
+  button:nth-of-type(1):hover {
+    background-color: #f4f6f3;
+    color: #3e4a39;
+    border-color: #3e4a39;
+  }
+  
+  /* Botón 2: Agregar al Carrito (Estilo Principal - Verde Oliva Sólido) */
+  button:nth-of-type(2) {
+    background-color: #6b7d64; /* Verde Oliva */
+    border: none;
+    color: white;
+  }
+  
+  button:nth-of-type(2):hover {
+    background-color: #3e4a39; /* Verde más oscuro */
+    box-shadow: 0 4px 12px rgba(62, 74, 57, 0.2);
+  }
