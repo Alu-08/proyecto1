@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Producto } from '../../models/producto';
+import { CarritoService } from '../../servicios/carritoService';
+import { FavoritosService } from '../../servicios/favoritos-service';
+import Swal from 'sweetalert2';
+import { Oferta } from '../../models/ofertas';
 
 @Component({
   selector: 'app-ofertas',
@@ -8,7 +11,8 @@ import { Producto } from '../../models/producto';
   styleUrl: './ofertas.css',
 })
 export class Ofertas {
-  Ofertas: Producto[] = [
+  constructor(private favoritosService: FavoritosService, private carritoS: CarritoService) { }
+  Ofertas: Oferta[] = [
     {
       id: 10,
       nombre: 'Ritual de autor',
@@ -17,7 +21,7 @@ export class Ofertas {
       stock: 100,
       disponible: true,
       imagen: 'Ritual de autor.png',
-      detalles: '¿Sos de los que buscan un sabor diferente para cada momento del día? Te presentamos la combinación perfecta de nuestra Tierra Maté Montañoso. Dos blends únicos creados para transformar tus mates en una experiencia refrescante y natural.',  
+      detalles: '¿Sos de los que buscan un sabor diferente para cada momento del día? Te presentamos la combinación perfecta de nuestra Tierra Maté Montañoso. Dos blends únicos creados para transformar tus mates en una experiencia refrescante y natural.',
       cantidad: 1,
     },
     {
@@ -28,7 +32,7 @@ export class Ofertas {
       stock: 80,
       disponible: true,
       imagen: 'Combo mate.png',
-      detalles: 'Hay rituales que no se negocian, se mejoran. Te presentamos el combo definitivo para los verdaderos amantes del buen mate. Un kit pensado para disfrutar del sabor más puro y natural, estés donde estés.',  
+      detalles: 'Hay rituales que no se negocian, se mejoran. Te presentamos el combo definitivo para los verdaderos amantes del buen mate. Un kit pensado para disfrutar del sabor más puro y natural, estés donde estés.',
       cantidad: 1,
     },
     {
@@ -50,7 +54,7 @@ export class Ofertas {
       stock: 90,
       disponible: true,
       imagen: 'Atardecer citrico.png',
-      detalles:'¿Hay algo mejor que un matecito al caer la tarde? Sí, ¡que tenga ese toque fresco y revitalizante que corta con la rutina! Te traemos este dúo imperdible para que nunca te falte la combinación más equilibrada de nuestra tierra.',
+      detalles: '¿Hay algo mejor que un matecito al caer la tarde? Sí, ¡que tenga ese toque fresco y revitalizante que corta con la rutina! Te traemos este dúo imperdible para que nunca te falte la combinación más equilibrada de nuestra tierra.',
       cantidad: 1,
     },
     {
@@ -61,7 +65,7 @@ export class Ofertas {
       stock: 40,
       disponible: true,
       imagen: 'Cofre de autor.png',
-      detalles:'Este cofre no es solo un empaque; es un homenaje a nuestro ritual más sagrado. Diseñado de forma artesanal en madera maciza y grabado con la esencia de la montaña, contiene una selección curada con todas nuestras variedades. El regalo definitivo para quien sabe apreciar los detalles y el buen mate.',
+      detalles: 'Este cofre no es solo un empaque; es un homenaje a nuestro ritual más sagrado. Diseñado de forma artesanal en madera maciza y grabado con la esencia de la montaña, contiene una selección curada con todas nuestras variedades. El regalo definitivo para quien sabe apreciar los detalles y el buen mate.',
       cantidad: 1,
     },
     {
@@ -72,8 +76,28 @@ export class Ofertas {
       stock: 500,
       disponible: true,
       imagen: 'Carga el termo.png',
-      detalles:'Este combo exclusivo incluye un termo de acero inoxidable "Montañoso Tierra Maté" en color verde oliva, equipado con manija reforzada y un grabado del logo de la marca, junto con un paquete de 1 kg de yerba mate con sabor a Coco, presentado en un práctico envase hermético con cierre zipper para asegurar la máxima frescura de la molienda en cada cebada.',
+      detalles: 'Este combo exclusivo incluye un termo de acero inoxidable "Montañoso Tierra Maté" en color verde oliva, equipado con manija reforzada y un grabado del logo de la marca, junto con un paquete de 1 kg de yerba mate con sabor a Coco, presentado en un práctico envase hermético con cierre zipper para asegurar la máxima frescura de la molienda en cada cebada.',
       cantidad: 1,
     }
   ]
+  agregarAlCarrito(p: Oferta): void {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Producto agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    this.carritoS.añadirProducto(p);
+  }
+  agregarAFavoritos(p: Oferta): void {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Producto agregado a favoritos",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    this.favoritosService.añadirFavorito(p);
+  }
 }
